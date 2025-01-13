@@ -1,0 +1,29 @@
+# Add custom directories to PATH
+export PATH=$PATH:/home/humam/.spicetify
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/home/humam/humam/asprite/asprite/build/bin"
+
+# Load Cargo environment
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+# Source custom aliases if they exist
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Source auto virtual environment activation script
+if [ -f ~/auto_activate_venv.sh ]; then
+    source ~/auto_activate_venv.sh
+fi
+
+# Initialize Homebrew
+if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# Initialize Starship prompt for Zsh
+eval "$(starship init zsh)"
+
+# touchegg
